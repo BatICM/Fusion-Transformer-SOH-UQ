@@ -26,7 +26,7 @@ The implemented workflow is:
 
 ## Repository Contents
 
-The provided code is a single end-to-end Python script that includes:
+The provided codes have end-to-end Python script that includes:
 
 - data loading and preprocessing
 - feature extraction and feature selection
@@ -244,18 +244,6 @@ Running the script creates multiple manuscript-style figures, including:
 - baseline comparison plots
 - voltage-window sensitivity plots
 - ablation study plots
-
-Some output filenames created by the script include:
-
-- `Cell{cell}_Cycle{cycle}_Overview_and_Sequence.png`
-- `SOH_and_Q_Profile_Degradation_Q1.png`
-- `Scalar_Feature_vs_SOH_Correlation_Q1.pdf`
-- `CNN-Transformer_with_Scalar_Features_Only_Probabilistic_SOH_Prediction_Grid.png`
-- `CNN-Transformer_with_Scalar_Features_Only_Scatter_Probabilistic_Predictions_Grid.png`
-- `CNN-Transformer_with_Scalar_Features_Only_KFold_Dual_Boxplots_Paper.png`
-- `Baseline_Comparison_TimesNewRoman_600dpi.png`
-- `Voltage_Window_Sensitivity_Final_Dec02_2025_600dpi.png`
-- `Ablation_Study_Final_With_Correct_Names_600dpi.png`
 
 ## Running the Code
 
