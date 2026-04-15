@@ -283,35 +283,6 @@ Temporal sequence generation then creates model inputs of shape:
 
 Inside the CNN-Transformer, the CNN converts each cycle pseudo-profile into an embedding, and the Transformer operates across the cycle sequence dimension.
 
-## Notes on Code–Paper Alignment
-
-This repository is clearly based on the manuscript, but there are a few implementation details in the provided script that differ from the paper text. This README documents the code as written.
-
-### Notable implementation differences
-
-1. **Sequence length**
-   - Paper: temporal window length is described as 10 cycles.
-   - Code: `sequence_length = 5` in the final training configuration.
-
-2. **CNN depth**
-   - Paper: the CNN feature extractor is described with 2 convolutional layers.
-   - Code: `CNNFeatureExtractor` uses 3 convolutional blocks.
-
-3. **Transformer aggregation**
-   - Paper: the encoder output is described as being globally pooled over time.
-   - Code: the final encoder output is flattened across the full sequence and projected with `output_projection`.
-
-4. **Attention feedforward activation**
-   - Paper: feedforward uses ReLU.
-   - Code: `CustomTransformerEncoderLayer` uses `gelu` inside the Transformer block.
-
-5. **Calibration step**
-   - The code applies an extra post-hoc sigma scaling step to target nominal coverage during evaluation. This calibration procedure is more explicit in the code than in the manuscript text.
-
-If you plan to release this repository publicly, it is worth either:
-- updating the manuscript to match the final implementation, or
-- tagging this code as the exact experimental version used for the final reported figures
-
 ## Reproducibility Tips
 
 To improve reproducibility:
